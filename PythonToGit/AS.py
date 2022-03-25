@@ -123,7 +123,7 @@ def main(entrada):
                     # print(pila[0])
                     bandera = False
                 else:
-                    print('---------------Cadena invalida por posicion no encontrada---------------')
+                    print('---------------Cadena invalida por posicion no encontrada--------------')
                     posicion = '$'
                     resultado = 'INCORRECTO'
                     break
