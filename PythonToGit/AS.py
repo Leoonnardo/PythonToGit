@@ -151,6 +151,9 @@ def main(entrada):
         print(resultado)
         resultado = os.popen(comando).read()
         print("Resultado: ", resultado)
+        
+        if comando == "git add .":
+            resultado = "Añadido"
     else:
         print(resultado)
         resultado = "Comando incorrecto"
