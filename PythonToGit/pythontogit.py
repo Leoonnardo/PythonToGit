@@ -1,6 +1,7 @@
 import os 
 
-temp = os.popen('git push').read()
+temp = os.popen('git clone https://github.com/Leoonnardo/PythonToGit.git').read()
+# temp = os.path.dirname("D:\Escritorio\Cuatrimestre 8\Compiladores\Corte 3\Corte 3\C2")
 
 print("Hola: ", temp)
 
