@@ -154,6 +154,15 @@ def main(entrada):
         
         if comando == "git add .":
             resultado = "Añadido"
+
+        if comando[0:9] == "git clone":
+            comandoAux = str(comando[29:len(comando)-4])
+            comandoAux = comandoAux.replace("/", " ")
+            comandoAux = comandoAux.split()
+            resultado = validarRepo(comandoAux[1])
+            # if comandoAux[1]
+
+
     else:
         print(resultado)
         resultado = "Comando incorrecto"
@@ -163,7 +172,20 @@ def main(entrada):
     print('Entrada final', listEntrada)
     return resultado
 
-    
+
+def validarRepo(comandoAux):
+    validar = ""
+    ruta = os.path.dirname(os.path.abspath(__file__))
+
+    dirs = os.listdir( ruta )
+
+    # This would print all the files and directories
+    for file in dirs:
+        print(file)
+        if comandoAux == file:
+            validar = "Repositorio existente"
+            return validar
+    return "No existe el repositorio"
             
 def validarPalabra(entrada):
     letra = list(string.ascii_uppercase) + list(string.ascii_lowercase)
