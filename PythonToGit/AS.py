@@ -162,6 +162,9 @@ def main(entrada):
             resultado = validarRepo(comandoAux[1])
             # if comandoAux[1]
 
+        if comando[0:15] == "git checkout -b":
+            resultado = "Switched to new branch " + comando[16:len(comando)]
+
 
     else:
         print(resultado)
@@ -170,6 +173,7 @@ def main(entrada):
     print(resultado)
     print('Pila final', pila)
     print('Entrada final', listEntrada)
+    
     return resultado
 
 
