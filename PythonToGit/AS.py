@@ -164,6 +164,8 @@ def main(entrada):
 
         if comando[0:15] == "git checkout -b":
             resultado = "Switched to new branch " + comando[16:len(comando)]
+        if comando[0:7] == "git push":
+            resultado = "Everyting up-to-date"
 
 
     else:
