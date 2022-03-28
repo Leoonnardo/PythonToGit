@@ -164,8 +164,24 @@ def main(entrada):
 
         if comando[0:15] == "git checkout -b":
             resultado = "Switched to new branch " + comando[16:len(comando)]
-        if comando[0:7] == "git push":
+
+        if comando[0:8] == "git push":
             resultado = "Everyting up-to-date"
+        
+        if comando[0:13] == "git branch -d":
+            validar = False
+            leer = os.popen("git branch").read()
+            leer = leer.split()
+            print(leer)
+            print(comando[14:len(comando)])
+            for i in range(len(leer)):
+                if comando[14:len(comando)] == leer[i]:
+                    validar = False
+                    break
+                else: 
+                    validar = True
+            if validar == True:
+                resultado = "branch "+comando[14:len(comando)]+" not found"
 
 
     else:
